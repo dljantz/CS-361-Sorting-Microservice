@@ -3,7 +3,7 @@ import requests
 url = "https://cs-361-sorting-microservice.onrender.com/sort"
 
 simple_payload = {
-    "arr": [3,2,1]
+    "arr": [3, 2, 1]
 }
 
 # Send the POST request
