@@ -1,19 +1,28 @@
-"""
-Requirements:
--- handle bad inputs too, return error code
--- always need two numbers, otherwise error
--- lots of them... just defualt to error code
-"""
-
 from fastapi import FastAPI
+from pydantic import BaseModel
+from typing import List
 
 # Initialize the application
 app = FastAPI()
 
 
-@app.get("")
-def health_check():
-    return {"status": "Microservice is online and listening."}
+class Item(BaseModel):
+    name: str
+    price: float
+    quantity: int
+
+
+class Input_JSON(BaseModel):
+    customer_id: str
+    items: List[Item]
+
+
+@app.post("/sort")
+def sort_simple(arr: []):
+    arr.sort()
+    return {
+        "sorted_array": arr
+    }
 
 
 # 1. The Client sends an HTTP request to this URL endpoint
@@ -34,33 +43,3 @@ def process_data(user_input: str):
     }
 
 
-@app.get("/subtract")
-def subtract(num1: float, num2: float):
-    """
-    :param num1: Number to subtract from
-    :param num2: Number to subtract by
-    :return: dict describing inputs and output
-    example call: https://cs361-add-subtract-microservice.onrender.com/subtract?num1=4&num2=1
-    """
-    difference = num1 - num2
-    return {
-        "num1": num1,
-        "num2": num2,
-        "difference": difference
-    }
-
-
-@app.get("/add")
-def subtract(num1: float, num2: float):
-    """
-    :param num1: First number to add
-    :param num2: Second number to add
-    :return: dict describing inputs and output
-    example call: https://cs361-add-subtract-microservice.onrender.com/add?num1=4&num2=1
-    """
-    sum = num1 + num2
-    return {
-        "num1": num1,
-        "num2": num2,
-        "sum": sum
-    }
