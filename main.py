@@ -12,7 +12,7 @@ class Int_Array(BaseModel):
 
 @app.post("/sort")
 def sort_simple(arr: Int_Array):
-    # arr.sort()
+    arr["ints"].sort()
     return {
         "unchanged_array": arr
     }

@@ -1,15 +1,15 @@
 import requests
 
-#url = "https://cs-361-sorting-microservice.onrender.com/sort"
+url = "https://cs-361-sorting-microservice.onrender.com/sort"
 url2 = "https://cs-361-sorting-microservice.onrender.com/test"
 
 simple_payload = {
-    "arr": [3, 2, 1]
+    "ints": [3, 2, 1]
 }
 
 # Send the POST request
 print("Sending request...")
-response = requests.post(url2, json=simple_payload)
+response = requests.post(url, json=simple_payload)
 
 # Check if the request was successful (HTTP Status 200)
 if response.status_code == 200:
