@@ -1,12 +1,13 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+from typing import List
 
 # Initialize the application
 app = FastAPI()
 
 
 class Int_Array(BaseModel):
-    ints: [int]
+    ints: List[int]
 
 """
 @app.post("/sort")
