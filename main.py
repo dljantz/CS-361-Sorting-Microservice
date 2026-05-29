@@ -4,11 +4,11 @@ from pydantic import BaseModel
 # Initialize the application
 app = FastAPI()
 
-"""
+
 class Int_Array(BaseModel):
     ints: [int]
 
-
+"""
 @app.post("/sort")
 def sort_simple(arr: Int_Array):
     # arr.sort()
