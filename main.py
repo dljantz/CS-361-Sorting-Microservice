@@ -10,12 +10,29 @@ class Int_Array(BaseModel):
     ints: List[int]
 
 
-@app.post("/sort")
+class Obj(BaseModel):
+    rank: int
+    info: dict
+
+
+class Obj_Array(BaseModel):
+    objs: List[Obj]
+
+
+@app.post("/sort_ints")
 def sort_simple(arr: Int_Array):
     numbers = arr.ints
     numbers.sort()
     return {
         "sorted_array": numbers
+    }
+
+
+@app.post("/sort_objects")
+def sort_objects(arr: Obj_Array):
+    objs = arr.objs
+    return {
+        "objects": objs
     }
 
 

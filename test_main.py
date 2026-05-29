@@ -1,15 +1,21 @@
 import requests
 
-url = "https://cs-361-sorting-microservice.onrender.com/sort"
-url2 = "https://cs-361-sorting-microservice.onrender.com/test"
+url = "https://cs-361-sorting-microservice.onrender.com/sort_ints"
+url2 = "https://cs-361-sorting-microservice.onrender.com/sort_objects"
 
 simple_payload = {
     "ints": [3, 2, 1]
 }
 
+complex_payload = {
+    "objs": [
+        {"rank": 1, "info": {"example_key": 42}}
+    ]
+}
+
 # Send the POST request
 print("Sending request...")
-response = requests.post(url, json=simple_payload)
+response = requests.post(url2, json=simple_payload)
 
 # Check if the request was successful (HTTP Status 200)
 if response.status_code == 200:
@@ -22,3 +28,5 @@ if response.status_code == 200:
 else:
     print(f"\nFailed with status code: {response.status_code}")
     print(response.text)
+
+
