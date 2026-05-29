@@ -4,7 +4,7 @@ from pydantic import BaseModel
 # Initialize the application
 app = FastAPI()
 
-
+"""
 class Int_Array(BaseModel):
     ints: [int]
 
@@ -15,3 +15,9 @@ def sort_simple(arr: Int_Array):
     return {
         "unchanged_array": arr
     }
+"""
+
+
+@app.post("/test")
+def proof_of_concept():
+    return {}
