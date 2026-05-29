@@ -18,7 +18,7 @@ complex_payload = {
 
 # Send the POST request
 print("Sending request...")
-response = requests.post(url2, json=complex_payload)
+response = requests.post(url, json=simple_payload)
 
 # Check if the request was successful (HTTP Status 200)
 if response.status_code == 200:
