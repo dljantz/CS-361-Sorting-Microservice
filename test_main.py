@@ -9,13 +9,16 @@ simple_payload = {
 
 complex_payload = {
     "objs": [
-        {"rank": 1, "info": {"example_key": 42}}
+        {"rank": 1, "info": {"example_key": 1}},
+        {"rank": 3, "info": {"example_key": 3}},
+        {"rank": 4, "info": {"example_key": 4}},
+        {"rank": 2, "info": {"example_key": 2}},
     ]
 }
 
 # Send the POST request
 print("Sending request...")
-response = requests.post(url2, json=simple_payload)
+response = requests.post(url2, json=complex_payload)
 
 # Check if the request was successful (HTTP Status 200)
 if response.status_code == 200:

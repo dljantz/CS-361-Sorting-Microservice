@@ -31,8 +31,9 @@ def sort_simple(arr: Int_Array):
 @app.post("/sort_objects")
 def sort_objects(arr: Obj_Array):
     objs = arr.objs
+    sorted_objs = sorted(objs, key=lambda x: x['rank'])
     return {
-        "objects": objs
+        "objects": sorted_objs
     }
 
 
