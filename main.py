@@ -14,7 +14,7 @@ class Int_Array(BaseModel):
 def sort_simple(arr: Int_Array):
     #arr["ints"]
     return {
-        "unchanged_array": arr["ints"]
+        "unchanged_array": arr
     }
 
 
