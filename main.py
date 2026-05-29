@@ -9,14 +9,13 @@ app = FastAPI()
 class Int_Array(BaseModel):
     ints: List[int]
 
-"""
+
 @app.post("/sort")
 def sort_simple(arr: Int_Array):
     # arr.sort()
     return {
         "unchanged_array": arr
     }
-"""
 
 
 @app.post("/test")
