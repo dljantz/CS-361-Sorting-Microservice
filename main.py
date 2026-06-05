@@ -39,7 +39,7 @@ def sort_objects(arr: Flexible_Obj_Array, sort_key: str = "rank"):
     sorted_objs = sorted(objs, key=lambda x: x[sort_key])
 
     return {
-        "objects": sorted_objs
+        "objs": sorted_objs
     }
 
 
